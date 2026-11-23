@@ -1,0 +1,17 @@
+test_analytic_bounds_on_nondefault_physical_scales (test_gaussian_bounds.TestGaussianBounds.test_analytic_bounds_on_nondefault_physical_scales) ... ok
+test_dispersion_and_uniform_rate (test_gaussian_bounds.TestGaussianBounds.test_dispersion_and_uniform_rate) ... ok
+test_mean_worst_case_and_boundary_corners (test_gaussian_bounds.TestGaussianBounds.test_mean_worst_case_and_boundary_corners) ... ok
+test_moment_pairing_and_covariance_lower_matrix (test_gaussian_bounds.TestGaussianBounds.test_moment_pairing_and_covariance_lower_matrix) ... ok
+test_sine_normalization_and_independent_covariance (test_gaussian_bounds.TestGaussianBounds.test_sine_normalization_and_independent_covariance) ... ok
+test_sine_overlap_and_variance_constants (test_gaussian_bounds.TestGaussianBounds.test_sine_overlap_and_variance_constants) ... ok
+test_zero_amplitude_and_linear_scaling (test_gaussian_bounds.TestGaussianBounds.test_zero_amplitude_and_linear_scaling) ... ok
+test_boundary_source_linear (test_ufbi_control.TestGaussianUFBI.test_boundary_source_linear) ... ok
+test_data_processing_order (test_ufbi_control.TestGaussianUFBI.test_data_processing_order) ... ok
+test_dst_operator_against_dense_tiny_grid (test_ufbi_control.TestGaussianUFBI.test_dst_operator_against_dense_tiny_grid) ... ok
+test_identical_collars_zero_distance (test_ufbi_control.TestGaussianUFBI.test_identical_collars_zero_distance) ... ok
+test_mass_and_geometry_guard (test_ufbi_control.TestGaussianUFBI.test_mass_and_geometry_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.095s
+
+OK

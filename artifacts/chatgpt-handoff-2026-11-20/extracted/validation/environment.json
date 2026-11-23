@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-20",
+  "timezone": "America/Los_Angeles",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "lean_available": false,
+  "lake_available": false
+}

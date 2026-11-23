@@ -1,0 +1,30 @@
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{longtable,booktabs,array}
+\usepackage{fvextra}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{float}
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Yang Mills spectral gap foundations}
+\fancyhead[R]{\small Review packet}
+\fancyfoot[L]{\small 20 November 2026}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{17pt}{7pt}
+\titlespacing*{\subsection}{0pt}{12pt}{5pt}
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\oldtableofcontents\clearpage}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\},fontsize=\small}
+\widowpenalty=10000
+\clubpenalty=10000

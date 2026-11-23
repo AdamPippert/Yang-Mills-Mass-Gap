@@ -1,0 +1,13 @@
+{
+  "geometries": 14,
+  "collar_cases": 56,
+  "channel_measurements": 168,
+  "failures": 0,
+  "max_mean_finite_ratio": 0.8651430833473271,
+  "max_mean_uniform_ratio": 0.2663874061666783,
+  "max_family_finite_ratio": 0.31271543455735806,
+  "max_family_uniform_ratio": 0.31271543455735806,
+  "max_moments_finite_ratio": 0.17793461048525927,
+  "max_moments_uniform_ratio": 0.17793461048525927,
+  "seconds": 2.963623182000447
+}

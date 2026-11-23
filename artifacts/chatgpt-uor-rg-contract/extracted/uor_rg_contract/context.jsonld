@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rg": "https://example.org/rg/v1#",
+    "uor": "https://uor.foundation/",
+    "state": "https://uor.foundation/state/",
+    "proof": "https://uor.foundation/proof/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "parent": {
+      "@id": "rg:parent",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "rg:source",
+      "@type": "@id"
+    },
+    "target": {
+      "@id": "rg:target",
+      "@type": "@id"
+    },
+    "scaleState": {
+      "@id": "rg:scaleState",
+      "@type": "@id"
+    },
+    "effectiveAction": {
+      "@id": "rg:effectiveAction",
+      "@type": "@id"
+    },
+    "observable": {
+      "@id": "rg:observable",
+      "@type": "@id"
+    },
+    "proofArtifact": {
+      "@id": "rg:proofArtifact",
+      "@type": "@id"
+    }
+  }
+}

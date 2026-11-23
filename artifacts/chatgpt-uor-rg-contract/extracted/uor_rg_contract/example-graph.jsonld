@@ -1,0 +1,203 @@
+{
+  "@graph": [
+    {
+      "@id": "urn:sha256:ae51cf6fcdf5fca8acce0094ed57302b1d6a8a1782750d039e1a5ae9bbdcb03d",
+      "@type": "https://example.org/rg/v1#ScaleState",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#k": 0,
+      "https://example.org/rg/v1#a": "1/8",
+      "https://example.org/rg/v1#g": {
+        "lo": "1/2",
+        "hi": "3/5"
+      },
+      "https://example.org/rg/v1#boxLength": 16,
+      "https://example.org/rg/v1#volumeSites": 65536,
+      "https://example.org/rg/v1#dimension": 4,
+      "https://example.org/rg/v1#cutoffs": {
+        "smallField": "1/4",
+        "largeField": "3/4"
+      },
+      "https://example.org/rg/v1#gaugeGroup": "SU(2)",
+      "https://example.org/rg/v1#boundary": "periodic"
+    },
+    {
+      "@id": "urn:sha256:654e4ef27d74675475090e7af3e083716447b0a23b4b93eaf308877f558443f6",
+      "@type": "https://example.org/rg/v1#ScaleState",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#k": 1,
+      "https://example.org/rg/v1#a": "1/4",
+      "https://example.org/rg/v1#g": {
+        "lo": "1/2",
+        "hi": "2/3"
+      },
+      "https://example.org/rg/v1#boxLength": 8,
+      "https://example.org/rg/v1#volumeSites": 4096,
+      "https://example.org/rg/v1#dimension": 4,
+      "https://example.org/rg/v1#cutoffs": {
+        "smallField": "1/4",
+        "largeField": "3/4"
+      },
+      "https://example.org/rg/v1#gaugeGroup": "SU(2)",
+      "https://example.org/rg/v1#boundary": "periodic"
+    },
+    {
+      "@id": "urn:sha256:baacc226d631ec49180d486ae4a9c4084d23f5757a4224f9be1296608fb36a91",
+      "@type": "https://example.org/rg/v1#EffectiveAction",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#scaleState": {
+        "@id": "urn:sha256:ae51cf6fcdf5fca8acce0094ed57302b1d6a8a1782750d039e1a5ae9bbdcb03d"
+      },
+      "https://example.org/rg/v1#wilsonBeta": {
+        "lo": "20/3",
+        "hi": "8"
+      },
+      "https://example.org/rg/v1#plaquetteConvention": "beta*(1-ReTr(U_p)/2)",
+      "https://example.org/rg/v1#polymerBounds": [
+        {
+          "polymer": "unit-hypercube",
+          "KAbsUpper": "1/16"
+        }
+      ]
+    },
+    {
+      "@id": "urn:sha256:7288f731e0cee018163cf8c61d2d58d72d222f89a98f5b9e3e95a430939d8904",
+      "@type": "https://example.org/rg/v1#EffectiveAction",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#scaleState": {
+        "@id": "urn:sha256:654e4ef27d74675475090e7af3e083716447b0a23b4b93eaf308877f558443f6"
+      },
+      "https://example.org/rg/v1#wilsonBeta": {
+        "lo": "9/2",
+        "hi": "8"
+      },
+      "https://example.org/rg/v1#plaquetteConvention": "beta*(1-ReTr(U_p)/2)+polymer",
+      "https://example.org/rg/v1#polymerBounds": [
+        {
+          "polymer": "blocked-hypercube",
+          "KAbsUpper": "1/8"
+        }
+      ]
+    },
+    {
+      "@id": "urn:sha256:497d7889274b81ed790d5ce6d48cae9edcf77889725b1d5fd65f77baaba67758",
+      "@type": "https://example.org/rg/v1#InvariantObservable",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#algebraId": "su2-wilson-loop-algebra/v1",
+      "https://example.org/rg/v1#operator": "WilsonLoop",
+      "https://example.org/rg/v1#symbol": "W(square-2x2)",
+      "https://example.org/rg/v1#symmetries": [
+        "gauge:SU(2)",
+        "hypercubic:D4"
+      ],
+      "https://example.org/rg/v1#normalization": "1/2",
+      "https://example.org/rg/v1#mappingCertificate": {
+        "@id": "urn:sha256:1089150e39d3fe98993891e7ef265ac988c67cc8029947ce0641e2f6432719c9"
+      }
+    },
+    {
+      "@id": "urn:sha256:340e664f069deb84f2660319d56ce046b4fbe8c337d6e5d57a97cd7de5a4374a",
+      "@type": "https://example.org/rg/v1#LeanProofArtifact",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#module": "MassGap/RG/BlockStep.lean",
+      "https://example.org/rg/v1#theorem": "block_step_uniform",
+      "https://example.org/rg/v1#sourceSha256": {
+        "@id": "urn:sha256:f447ee4ed060576c1febd6bab589f9c1211f4ce42f7aa4f68b8a8a90f103e683"
+      },
+      "https://example.org/rg/v1#theoremStatementSha256": {
+        "@id": "urn:sha256:eb420e9eb3b27192b376980a69b41b858ea6baca06657dc778255220edffafee"
+      },
+      "https://example.org/rg/v1#axioms": [],
+      "https://example.org/rg/v1#imports": [
+        "Mathlib"
+      ],
+      "https://example.org/rg/v1#dependencies": [
+        {
+          "@id": "urn:sha256:ae51cf6fcdf5fca8acce0094ed57302b1d6a8a1782750d039e1a5ae9bbdcb03d"
+        },
+        {
+          "@id": "urn:sha256:654e4ef27d74675475090e7af3e083716447b0a23b4b93eaf308877f558443f6"
+        }
+      ],
+      "https://example.org/rg/v1#status": "assumed",
+      "https://example.org/rg/v1#leanVersion": "4.x-unverified",
+      "https://example.org/rg/v1#buildLogSha256": {
+        "@id": "urn:sha256:07f35005370cd9acf69687eb222df4a9cb09b2bbd60a943772c0929e7b88a858"
+      }
+    },
+    {
+      "@id": "urn:sha256:e9dfb1cced80c9c9f0068b13d4b54b2470e28974fff1d5bda183dc2b1afeae12",
+      "@type": "https://example.org/rg/v1#RGTransition",
+      "https://example.org/rg/v1#theory": "toy-su2-blocking",
+      "https://example.org/rg/v1#version": "rg-contract/1",
+      "https://example.org/rg/v1#source": {
+        "@id": "urn:sha256:ae51cf6fcdf5fca8acce0094ed57302b1d6a8a1782750d039e1a5ae9bbdcb03d"
+      },
+      "https://example.org/rg/v1#target": {
+        "@id": "urn:sha256:654e4ef27d74675475090e7af3e083716447b0a23b4b93eaf308877f558443f6"
+      },
+      "https://example.org/rg/v1#sourceAction": {
+        "@id": "urn:sha256:baacc226d631ec49180d486ae4a9c4084d23f5757a4224f9be1296608fb36a91"
+      },
+      "https://example.org/rg/v1#targetAction": {
+        "@id": "urn:sha256:7288f731e0cee018163cf8c61d2d58d72d222f89a98f5b9e3e95a430939d8904"
+      },
+      "https://example.org/rg/v1#observable": {
+        "@id": "urn:sha256:497d7889274b81ed790d5ce6d48cae9edcf77889725b1d5fd65f77baaba67758"
+      },
+      "https://example.org/rg/v1#blockFactor": 2,
+      "https://example.org/rg/v1#constantEnvelope": [
+        {
+          "https://example.org/rg/v1#name": "C",
+          "https://example.org/rg/v1#value": {
+            "lo": "1",
+            "hi": "2"
+          },
+          "https://example.org/rg/v1#scope": "uniform_all_a_L",
+          "https://example.org/rg/v1#derivation": "sha256:12a50da77de8b209b15d738af32f1c227ac0b5df031617a6538d74e65872f264",
+          "https://example.org/rg/v1#freeVariables": [
+            "blockFactor"
+          ]
+        },
+        {
+          "https://example.org/rg/v1#name": "m",
+          "https://example.org/rg/v1#value": {
+            "lo": "1/4",
+            "hi": "1/2"
+          },
+          "https://example.org/rg/v1#scope": "uniform_all_a_L",
+          "https://example.org/rg/v1#derivation": "sha256:4e68d5dfd07c14a2b6f3436583ecf560460b676f7fddfd5813db85fcf66d6a4a",
+          "https://example.org/rg/v1#freeVariables": [
+            "blockFactor"
+          ]
+        },
+        {
+          "https://example.org/rg/v1#name": "g_bound",
+          "https://example.org/rg/v1#value": {
+            "lo": "1/2",
+            "hi": "2/3"
+          },
+          "https://example.org/rg/v1#scope": "uniform_all_a_L",
+          "https://example.org/rg/v1#derivation": "sha256:c9e4792e7ad497fc1e30ac92c3598d5d71ecffdcf87df71db59bdd60025522cf",
+          "https://example.org/rg/v1#freeVariables": [
+            "blockFactor"
+          ]
+        }
+      ],
+      "https://example.org/rg/v1#certificates": [
+        {
+          "@id": "urn:sha256:c28b4b44ec89660e72ff74aebed54609c08bdea9c102d1565161c9907071f575"
+        }
+      ],
+      "https://example.org/rg/v1#leanProof": {
+        "@id": "urn:sha256:340e664f069deb84f2660319d56ce046b4fbe8c337d6e5d57a97cd7de5a4374a"
+      },
+      "https://example.org/rg/v1#status": "candidate"
+    }
+  ]
+}

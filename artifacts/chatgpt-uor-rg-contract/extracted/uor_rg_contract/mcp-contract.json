@@ -1,0 +1,33 @@
+{
+  "contractVersion": "rg-mcp/1",
+  "namespace": "rg",
+  "methods": {
+    "rg.put_candidate": {
+      "input": {"payload": "JSON object matching contract.schema.json"},
+      "output": {"digest": "sha256:<64 lowercase hex>", "status": "candidate"},
+      "effect": "Canonicalize, hash and append immutable payload; never overwrite."
+    },
+    "rg.get": {
+      "input": {"digest": "sha256:<64 lowercase hex>"},
+      "output": {"digest": "same digest", "payload": "verified bytes decoded as JSON"},
+      "effect": "Recompute digest before returning."
+    },
+    "rg.verify_transition": {
+      "input": {"digest": "transition digest"},
+      "output": {"checks": ["schema", "digest", "links", "scale", "intervals", "dependency_closure", "observable_map", "uniformity", "lean_kernel"], "status": "candidate|rejected|certified", "diagnostics": "array"},
+      "effect": "Reject unknown references, missing witnesses, free-variable leakage, axiom violations, and failed Lean checks."
+    },
+    "rg.certify": {
+      "input": {"digest": "transition digest"},
+      "output": {"certificateDigest": "content hash of attestation", "status": "certified"},
+      "effect": "Atomic admission only after all configured trusted checks succeed; attestation records verifier binary and schema digests."
+    }
+  },
+  "security": {
+    "writes": "append-only",
+    "unresolvedDigests": "reject at certification",
+    "floatingPoint": "forbidden for mathematical bounds",
+    "lean": "trusted toolchain and compiled source digests required",
+    "idempotency": "repeat PUT of identical bytes returns same digest"
+  }
+}

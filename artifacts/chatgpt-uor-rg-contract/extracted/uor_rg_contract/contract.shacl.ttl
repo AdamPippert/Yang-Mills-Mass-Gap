@@ -1,0 +1,19 @@
+@prefix rg: <https://example.org/rg/v1#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+rg:TransitionShape a sh:NodeShape ;
+  sh:targetClass rg:RGTransition ;
+  sh:property [ sh:path rg:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path rg:target ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path rg:constantEnvelope ; sh:minCount 3 ] ;
+  sh:sparql [ sh:message "Every constant must have uniform_all_a_L scope and no forbidden free variables" ;
+    sh:select """SELECT $this WHERE { $this rg:constantEnvelope ?c . FILTER NOT EXISTS { ?c rg:scope "uniform_all_a_L" } }""" ] ;
+  sh:sparql [ sh:message "Transition must increase scale index by one" ;
+    sh:select """SELECT $this WHERE { $this rg:source ?s ; rg:target ?t . ?s rg:k ?ks . ?t rg:k ?kt . FILTER (?kt != (?ks + 1)) }""" ] ;
+  sh:sparql [ sh:message "Forbid free-variable dependency on a or L" ;
+    sh:select """SELECT $this WHERE { $this rg:constantEnvelope ?c . ?c rg:freeVariables ?v . FILTER (STR(?v) IN ("a","L","a_k","volume","box_length")) }""" ] .
+
+rg:ScaleShape a sh:NodeShape ; sh:targetClass rg:ScaleState ;
+  sh:property [ sh:path rg:dimension ; sh:hasValue 4 ; sh:minCount 1 ] .

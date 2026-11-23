@@ -1,0 +1,1132 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  letterpaper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setmonofont[]{Latin Modern Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Latin Modern Roman}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{longtable,booktabs,array}
+\usepackage{fvextra}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{float}
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Yang Mills spectral gap foundations}
+\fancyhead[R]{\small Review packet}
+\fancyfoot[L]{\small 20 November 2026}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{17pt}{7pt}
+\titlespacing*{\subsection}{0pt}{12pt}{5pt}
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\oldtableofcontents\clearpage}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\},fontsize=\small}
+\widowpenalty=10000
+\clubpenalty=10000
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Yang Mills spectral gap foundations},
+  pdfauthor={Prepared with ChatGPT for Adam Pippert},
+  pdflang={en-US},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Yang Mills spectral gap foundations}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Mathematician review packet}
+\author{Prepared with ChatGPT for Adam Pippert}
+\date{20 November 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{Review mandate}\label{review-mandate}
+
+This packet asks an independent mathematician to assess a specific
+research route: quantitative boundary influence for selected
+observables, transfer to temporal clustering, and exclusion of
+low-energy spectral weight in a reconstructed quantum theory. The
+intended application is four-dimensional pure Yang-Mills theory. The
+immediate deliverables are an assessment of the actual hypotheses,
+corrections to the arguments, and a tractable next lemma.
+
+\textbf{Present conclusion.} There is an explicit ordinary mathematical
+derivation of Gaussian boundary-to-interior estimates for a block mean
+and controlled smeared channels. There is also a complete conditional
+spectral-gap argument, stated and proved below. Neither establishes the
+required interacting Yang-Mills estimates. No Lean-checked theorem or
+successful Lean build is claimed. The original reflection-positivity
+file contains unfilled assumptions and admitted proofs that require
+mathematical repair before implementation.
+
+\textbf{Requested review.} Please evaluate the Gaussian inequalities
+under their literal quantifiers; verify the conditional spectral
+theorem; determine whether a sufficiently strong, gauge-compatible
+boundary or direct clustering hypothesis is plausible along the relevant
+scaling trajectory; and identify the smallest next result that would
+materially advance the construction. A useful response may reject or
+replace the proposed UFBI route while preserving the abstract spectral
+theorem.
+
+The complete archive includes 13 recovered source and result files,
+preserved byte for byte, new explanatory review notes, fresh numerical
+logs, and this document in editable Markdown and LaTeX. The archive is a
+standalone handoff, not a checkout of the upstream Lean repository. No
+independent human review has yet been obtained.
+
+\section{Evidence and claim
+boundaries}\label{evidence-and-claim-boundaries}
+
+The following distinctions govern every statement in this packet. Labels
+refer to the type of evidence, not to a judgment about whether an
+unproved claim is false.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Evidence available
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What remains
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gaussian estimates G1 to G8 & Ordinary derivations in the recovered
+analytic note; additional AI audit & Independent mathematical review and
+formalization \\
+Python implementation & 12 supplied tests rerun successfully; 14
+geometries and 168 channel measurements with no recorded violations &
+These floating-point checks are not interval certificates or proofs of
+uniformity \\
+Original pilot constants & Reproduced rejection in 9 of 108 measurements
+& Preserve the failed candidate as a negative control \\
+Conditional spectral theorem & Complete analytic proof in this packet &
+Lean implementation and assumption audit \\
+Reflection-positivity scaffold & Source inspected; three admitted proof
+bodies & Repair A1 and A2 statements; separate A3 dependencies \\
+Upstream reconstruction interfaces & Earlier inspection recorded at a
+fixed commit; selected source pages checked during packaging & No local
+checkout or build; no compiled adapter \\
+Wilson clustering and continuum passage & Explicit research obligations
+& No proof supplied by this work \\
+\end{longtable}
+
+The Gaussian estimates concern a model with an input mass \(m>0\). They
+establish consequences of that assumption. The eventual Yang-Mills task
+also requires a nontrivial continuum theory with the intended field
+content and axioms; the official problem statement is the target
+reference {[}1{]}. A vacuum-only Hilbert space would not meet that
+target, even if a spectral lower-bound statement were vacuous.
+
+Two notation conventions prevent a silent identification of different
+rates. In the Gaussian sections, \(m\) is the supplied scalar mass and
+\(\gamma_*\) is a derived boundary-influence rate. In the spectral
+theorem, \(\Delta\) is a common temporal autocorrelation rate. No
+identity \(\Delta=\gamma_*\) is assumed. The missing transfer argument
+must quantify any geometric or normalization losses.
+
+\section{The recovered UFBI contract}\label{the-recovered-ufbi-contract}
+
+UFBI is the working name used in the source specification {[}S{]}; no
+equivalence to a standard mixing condition is assumed. For a lattice
+region, a fixed central physical side \(q\), an admissible collar class
+\(\mathcal C_{a,L}(M)\), and a declared measurable observation channel
+\(F\), let
+
+\[
+\nu^\tau_{a,L,F}=F_*\mu^\tau_{a,L}
+\]
+
+be the channel law conditioned on collar \(\tau\). The proposed contract
+is
+
+\[
+2\operatorname{TV}(\nu^\tau_{a,L,F},\nu^{\tau'}_{a,L,F})
+\le \min\{2,KM e^{-\gamma D}\}.
+\]
+
+Here \(\operatorname{TV}(P,Q)=\sup_A|P(A)-Q(A)|\), so
+\(2\operatorname{TV}\in[0,2]\). The constants \(K<\infty\) and
+\(\gamma>0\) must be chosen before varying the admissible mesh, volume,
+separation, or collars. Their permitted dependence on fixed physical
+parameters and the declared observable class must be recorded. A bound
+whose right side is 2 is tautological.
+
+The original specification keeps the channel dimension bounded under
+refinement. Its Gaussian supplement adds sufficient analytic control on
+the whole smearing span or a trial-pairing certificate. A bounded number
+of channels, bounded amplitudes of their weights, or individual energy
+bounds do not by themselves establish those certificates or the density
+required by the spectral theorem.
+
+For the gauge theory, the collar class and its size parameter are still
+to be defined. Compact group-valued links do not inherit the scalar
+rescaling \(\tau=a\Phi\). The linear dependence on \(M\) is a Gaussian
+conclusion, not an established Wilson continuity estimate.
+
+\section{Gaussian model and explicit
+estimates}\label{gaussian-model-and-explicit-estimates}
+
+This section condenses the recovered proof {[}G{]}. The original full
+derivation, numerical implementation, and tests are included in the
+archive. All statements here concern the specified finite-dimensional
+Dirichlet model.
+
+\subsection{Geometry and field
+normalization}\label{geometry-and-field-normalization}
+
+Fix \(q>0\), \(m>0\), an integer \(B\ge1\), and an odd integer
+\(R\ge3\). Define
+
+\[
+a=q/B,\qquad L=RB,\qquad s=(R-1)B/2,
+\] \[
+\Lambda_L=\{1,\ldots,L\}^4,\qquad
+Q=\{s+1,\ldots,s+B\}^4,
+\] \[
+A=-\Delta_{\Lambda_L,D}+(ma)^2 I,\qquad \Sigma=A^{-1}.
+\]
+
+The unscaled Dirichlet Laplacian has diagonal 8 and off-diagonal \(-1\)
+for interior nearest neighbors. Exterior ghost nodes are not
+periodically identified. The incidence map \(\mathcal J\) sums the ghost
+values adjacent to each interior node, counting every exterior link at
+intersections.
+
+Completing the square gives the interior law
+
+\[
+\mu^\tau=\mathcal N(A^{-1}\mathcal J\tau,A^{-1}).
+\]
+
+Thus the covariance is independent of the collar. Use the
+four-dimensional scalar normalization \(\phi=a\Phi\) and restrict both
+collars by
+
+\[
+\|\tau/a\|_\infty\le M,\qquad
+\|\tau'/a\|_\infty\le M.
+\]
+
+For \(g=(\tau-\tau')/a\), put \(u=P_QA^{-1}\mathcal Jg\). The physical
+mean shift in \(Q\) is \(u\), and the lattice-field shift is \(h=au\).
+The exact separation from the nearest central node to an exterior ghost
+node is
+
+\[
+D=a(s+1)=\frac{R-1}{2}q+a.
+\]
+
+The nominal central side \(q=aB\) differs from the ghost-to-ghost
+small-box side \(a(B+1)\). The earlier exploratory code fixed the outer
+box instead. Its convention \(a=1/(RB)\) is preserved in the historical
+file and must not be mixed with the later fixed-\(q\) contract.
+
+\subsection{Boundary barrier}\label{boundary-barrier}
+
+Let
+
+\[
+\kappa_a=2\operatorname{arsinh}(ma/2),\qquad
+\rho_a=\kappa_a/a,\qquad
+b_a(D)=\min\{1,8e^{-\rho_aD}\}.
+\]
+
+Then \(2(\cosh\kappa_a-1)=(ma)^2\). Writing \(W\) for interior
+adjacency, the convergent expansion
+
+\[
+A^{-1}=\frac1{8+(ma)^2}\sum_{n=0}^{\infty}
+\left(\frac{W}{8+(ma)^2}\right)^n
+\]
+
+shows entrywise positivity. The eight face exponentials give the massive
+harmonic barrier
+
+\[
+w(x)=\sum_{i=1}^4
+\frac{e^{-\kappa_a x_i}+e^{-\kappa_a(L+1-x_i)}}
+{1+e^{-\kappa_a(L+1)}}.
+\]
+
+It is at least 1 on each ghost face; the constant 1 is also a
+supersolution. Applying the discrete maximum principle to both signs of
+the extension yields
+
+\[
+\|u\|_{\infty,Q}\le\|g\|_\infty b_a(D)\le2M b_a(D).
+\tag{G1}
+\]
+
+For the average \(\ell_B(v)=B^{-4}\sum_Qv(x)\), the sharper barrier is
+
+\[
+|\ell_B(u)|\le\|g\|_\infty\bar b_{B,L},
+\] \[
+\bar b_{B,L}=\min\left\{1,
+\frac{8e^{-\rho_aD}}{1+e^{-\kappa_a(L+1)}}
+\frac{1-e^{-\kappa_a B}}{B(1-e^{-\kappa_a})}\right\}.
+\]
+
+No smoothness assumption on the bounded collar values is used.
+
+\subsection{Covariance lower bound and standardized block
+mean}\label{covariance-lower-bound-and-standardized-block-mean}
+
+For \(Y_{\rm mean}=(aB^4)^{-1}\sum_Q\phi_x\), let
+\(f=B^{-4}\mathbf1_Q\), zero extended into \(\Lambda_L\). Its variance
+is
+
+\[
+V_B=a^{-2}f^TA^{-1}f.
+\]
+
+For any nonzero trial vector \(v\), Cauchy-Schwarz in the \(A\)-energy
+gives
+
+\[
+f^TA^{-1}f\ge\frac{(f^Tv)^2}{v^TAv}.
+\]
+
+Choose the normalized first tensor sine mode on \(Q\), zero outside, and
+define
+
+\[
+\alpha_B=\frac{\pi}{2(B+1)},\quad
+\lambda_B=(ma)^2+16\sin^2\alpha_B,\quad
+r_B=\frac{2\cot^2\alpha_B}{B(B+1)}.
+\]
+
+The exact one-dimensional sine sums give
+
+\[
+V_B\ge v_B:=\frac{r_B^4}{a^2B^4\lambda_B}.
+\]
+
+The inequalities \(r_B\ge8/\pi^2\) and \(B^2\lambda_B\le(mq)^2+4\pi^2\)
+then give the mesh-independent lower bound
+
+\[
+V_B\ge v_0:=\frac{(64/\pi^4)^2}
+{q^2((mq)^2+4\pi^2)}.
+\tag{G2}
+\]
+
+For completeness, on \(0\le x\le\pi/4\), convexity gives
+\(\sin^2x\le2x/\pi\), while \(\sin x\le x\). At \(x=\alpha_B\) these
+imply \(\cot^2\alpha_B\ge4B(B+1)/\pi^2\), which proves the stated bound
+on \(r_B\).
+
+The standardized boundary-to-mean map is
+
+\[
+\mathcal T_{\rm mean}g=
+\frac{\ell_B(P_QA^{-1}\mathcal Jg)}{\sqrt{V_B}}.
+\]
+
+Consequently,
+
+\[
+\|\mathcal T_{\rm mean}\|_{\infty\to\mathbb R}
+\le\frac{\bar b_{B,L}}{\sqrt{v_B}}
+\le\frac{\pi^4}{64}q\sqrt{(mq)^2+4\pi^2}\,b_a(D),
+\tag{G3}
+\] \[
+d_{\rm mean}\le
+\frac{\pi^4}{4}Mq\sqrt{(mq)^2+4\pi^2}e^{-\rho_aD}.
+\]
+
+All coefficients of the scalar mean response to \(g\) are nonnegative.
+Thus opposite constant collars \(\tau=+aM\), \(\tau'=-aM\) attain its
+supremum over the stated amplitude class. This argument does not
+establish maximization for a joint signed channel.
+
+\subsection{Exact Gaussian distances and uniform
+constants}\label{exact-gaussian-distances-and-uniform-constants}
+
+For a linear channel with covariance \(C\) and displacement \(\delta\),
+set \(d^2=\delta^TC^{-1}\delta\). For equal-covariance Gaussian laws,
+
+\[
+2\operatorname{TV}=2\operatorname{erf}\left(\frac{d}{2\sqrt2}\right)
+\le\min\{2,\sqrt{2/\pi}\,d\},
+\] \[
+H_{\rm Hel}^2=1-e^{-d^2/8},\qquad
+H_{\rm Hel}^2=1-\int\sqrt{pq}.
+\]
+
+Whitening and rotating the displacement reduces the total-variation
+calculation to a one-dimensional likelihood-ratio threshold. Completing
+the square gives the Hellinger identity. For singular channels, first
+remove redundant coordinates, or use the inverse on their common
+support. In this linear pushforward setting the displacement lies in
+that support. Background conventions are recorded in {[}3{]}; the proofs
+do not rely on a general unequal-covariance approximation.
+
+Restrict \(ma\le t_*\) for fixed \(t_*>0\), and define
+
+\[
+\gamma_* =m\frac{2\operatorname{arsinh}(t_*/2)}{t_*}>0.
+\]
+
+The function \(2\operatorname{arsinh}(t/2)/t\) is decreasing, so
+\(\rho_a\ge\gamma_*\). It follows that
+
+\[
+2\operatorname{TV}_{\rm mean}\le
+\min\{2,K_{\rm mean}M e^{-\gamma_*D}\},
+\] \[
+K_{\rm mean}=\sqrt{2/\pi}\frac{\pi^4}{4}
+q\sqrt{(mq)^2+4\pi^2}.
+\tag{G4}
+\]
+
+The mesh rate satisfies \(\rho_a<m\) at nonzero spacing and tends to
+\(m\) as \(a\to0\). A claim with exact rate \(m\) at every mesh is not
+proved here. A continuum channel bound additionally requires convergence
+of its means and covariances.
+
+\subsection{Joint smeared channels and hard-edged
+moments}\label{joint-smeared-channels-and-hard-edged-moments}
+
+Use \(\langle f,g\rangle_a=a^4\sum_xf(x)g(x)\) and \(L_a=A/a^2\). For
+linearly independent real weights \(\psi_i\) supported in \(Q\), define
+
+\[
+Y_i=a^3\sum_x\psi_i(x)\phi_x,\quad
+C_{ij}=\langle\psi_i,L_a^{-1}\psi_j\rangle_a,\quad
+\delta_i=\langle\psi_i,u\rangle_a.
+\]
+
+Suppose the whole span \(V_a\) obeys the physical energy bound
+
+\[
+\langle f,L_af\rangle_a\le\Lambda_{\rm sm}\langle f,f\rangle_a
+\qquad(f\in V_a)
+\]
+
+with one \(\Lambda_{\rm sm}\) independent of mesh and outer volume. If
+\(G\) is the Gram matrix of the weights, the variational inequality
+gives \(C\succeq G/\Lambda_{\rm sm}\). Therefore
+
+\[
+\begin{aligned}
+d_F^2&\le\Lambda_{\rm sm}\delta^TG^{-1}\delta
+=\Lambda_{\rm sm}\|P_{V_a}u\|_a^2\\
+&\le\Lambda_{\rm sm}q^4\|u\|_\infty^2,
+\end{aligned}
+\] \[
+d_F\le2Mq^2\sqrt{\Lambda_{\rm sm}}\,b_a(D)
+\le16Mq^2\sqrt{\Lambda_{\rm sm}}e^{-\rho_aD}.
+\tag{G6}
+\]
+
+Thus \(K_F=16\sqrt{2/\pi}\,q^2\sqrt{\Lambda_{\rm sm}}\) suffices, with
+rate \(\gamma_*\). There is no extra factor \(\sqrt{k}\). The factor 8
+in the barrier is retained in the pure exponential coefficient.
+
+Fixed Dirichlet sine frequencies \(1\le n_i\le J\), with \(B\ge J\),
+satisfy this condition with \(\Lambda_{\rm sm}=m^2+4\pi^2J^2/q^2\). For
+\(B\ge2\), the first mode and four modes with a single frequency 2 admit
+the sharper value \(\Lambda_7=m^2+7\pi^2/q^2\).
+
+The sharp block mean and coordinate dipoles have zero-extension energies
+that are not uniformly bounded. The original note instead uses trial
+functions \(v_j\) and matrices \(P_{ij}=\langle\psi_i,v_j\rangle_a\) and
+\((E_v)_{ij}=\langle v_i,L_av_j\rangle_a\) to prove
+
+\[
+C_F\succeq P E_v^{-1}P^T.
+\]
+
+For the normalized mean plus four dipoles, with \(B\ge2\),
+\(G_F\preceq I\), \(E_v\preceq\Lambda_7 I\), and
+
+\[
+s_{\min}(P)\ge s_0=32\sqrt3/\pi^4.
+\]
+
+This yields
+
+\[
+K_{\rm mean+dipoles}=
+\frac{16\sqrt{2/\pi}}{s_0}q\sqrt{(mq)^2+7\pi^2}.
+\tag{G8}
+\]
+
+The exact pairing sums and proof of \(s_0\) are in {[}G, section 6{]}.
+For \(m=2\), \(q=1\), \(t_*=1\), the sufficient constants are:
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+Channel & \(K\) & Common \(\gamma_*\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Block mean & 128.1198512355 & 1.9248473002 \\
+Five sine modes & 109.1392079748 & 1.9248473002 \\
+Mean plus four dipoles & 191.8093099258 & 1.9248473002 \\
+\end{longtable}
+
+These constants are conservative analytic bounds, not fitted optima. For
+every bounded Borel function of a controlled joint channel,
+
+\[
+|\mathbb E_\tau f(Y)-\mathbb E_{\tau'}f(Y)|
+\le2\|f\|_\infty\operatorname{TV}(\nu^\tau,\nu^{\tau'}).
+\]
+
+The displayed UFBI envelope therefore applies unchanged when
+\(\|f\|_\infty\le1\). Unbounded polynomials require additional moment
+control. Holding lattice collars at order one would make \(M\) grow like
+\(a^{-1}\) and destroy the stated uniform constant.
+
+\section{Conditional spectral
+theorem}\label{conditional-spectral-theorem}
+
+This is the completed analytic implication to be formalized. It assumes
+a Hamiltonian and proves a spectral conclusion; it does not construct a
+quantum field theory.
+
+\subsection{Statement}\label{statement}
+
+Let \(\mathscr H\) be a complex Hilbert space, \(H\ge0\) a densely
+defined self-adjoint operator, and \(\Omega\in\operatorname{Dom}(H)\) a
+unit vector with \(H\Omega=0\). Put \(\mathscr K=\Omega^\perp\). Let
+\(\mathcal D\subset\mathscr K\) have dense linear span in
+\(\mathscr K\).
+
+Assume there is one \(\Delta>0\) such that, for every
+\(\psi\in\mathcal D\), finite \(C_\psi\ge0\) and \(t_\psi\ge0\) exist
+with
+
+\[
+0\le\langle\psi,e^{-tH}\psi\rangle
+\le C_\psi e^{-\Delta t}\qquad(t\ge t_\psi).
+\tag{SG}
+\]
+
+Let \(E\) be the spectral measure of \(H\), and \(P_\Omega\) the
+orthogonal projection onto \(\mathbb C\Omega\). Then
+
+\[
+E([0,\Delta))=P_\Omega,\qquad
+\ker H=\mathbb C\Omega,
+\] \[
+\sigma(H)\subseteq\{0\}\cup[\Delta,\infty),\qquad
+H|_{\mathscr K}\ge\Delta I.
+\]
+
+The last inequality is understood as a quadratic-form bound. The gap is
+at least \(\Delta\); an excitation at exactly \(\Delta\) is not
+asserted. Nontriviality of \(\mathscr K\) is a separate requirement.
+
+\subsection{Proof}\label{proof}
+
+For \(\psi\in\mathcal D\), define the finite positive measure
+
+\[
+\mu_\psi(B)=\langle\psi,E(B)\psi\rangle
+=\|E(B)\psi\|^2.
+\]
+
+For \(0\le r<\Delta\) and sufficiently large \(t\), positivity and the
+spectral theorem give
+
+\[
+e^{-rt}\mu_\psi([0,r])
+\le\int_{[0,\infty)}e^{-t\lambda}\,d\mu_\psi(\lambda)
+\le C_\psi e^{-\Delta t}.
+\]
+
+Thus \(0\le\mu_\psi([0,r])\le C_\psi e^{-(\Delta-r)t}\), and letting
+\(t\to\infty\) gives \(E([0,r])\psi=0\). This bounded projection
+vanishes on the linear span of \(\mathcal D\) and hence on all of
+\(\mathscr K\). Since \(H\Omega=0\), it is the identity on
+\(\mathbb C\Omega\), so \(E([0,r])=P_\Omega\).
+
+Choose \(r_n\uparrow\Delta\) with \(0\le r_n<\Delta\). Increasing-set
+continuity of spectral projections yields \(E([0,\Delta))=P_\Omega\).
+The vacuum eigenspace and its orthogonal complement reduce \(H\), and
+the restricted spectral measure on \(\mathscr K\) is supported in
+\([\Delta,\infty)\). This proves the form bound and spectral inclusion.
+In particular \(E(\{0\})=P_\Omega\), proving vacuum uniqueness.
+
+As a consequence, for every \(\eta\in\mathscr K\) and \(t\ge0\),
+
+\[
+0\le\langle\eta,e^{-tH}\eta\rangle
+\le e^{-\Delta t}\|\eta\|^2.
+\]
+
+The proof does not need a uniform prefactor across the initial spanning
+family; the positive decay rate must be common. The order of quantifiers
+is \(\exists\Delta>0\;\forall\psi\;\exists C_\psi,t_\psi\).
+
+\subsection{Observable and time
+conventions}\label{observable-and-time-conventions}
+
+With the inner product linear in the second argument, define
+\(\omega(A)=\langle\Omega,A\Omega\rangle\) and
+\(\psi_A=(A-\omega(A)I)\Omega\) for bounded \(A\). Then
+
+\[
+\langle\psi_A,e^{-tH}\psi_A\rangle
+=\langle\Omega,A^*e^{-tH}A\Omega\rangle-|\omega(A)|^2.
+\]
+
+These positive connected temporal autocorrelations are the required
+inputs. A cyclic observable algebra supplies density after centering
+only if its actual vectors, including any necessary products, are
+covered by the estimates. Unbounded fields need controlled domains or
+directly defined reconstructed vectors.
+
+For \(T_a=e^{-a_tH_a}\) with \(T_a\Omega_a=\Omega_a\), a decay
+\(e^{-\kappa_a n}\) in transfer steps corresponds to physical energy
+\(\kappa_a/a_t\). The continuum task needs a common strictly positive
+physical threshold. Also,
+\(\|e^{-tH}\psi\|^2=\langle\psi,e^{-2tH}\psi\rangle\): a squared-norm
+rate \(\Delta\) yields energy threshold \(\Delta/2\).
+
+The original scaffold's \texttt{HasPVMGap} only excludes the open
+positive-energy window \(0<E<\Delta\). That statement alone does not
+establish vacuum uniqueness. The stronger projection identity above
+does.
+
+\subsection{Exact tests of the
+hypotheses}\label{exact-tests-of-the-hypotheses}
+
+\textbf{Missing states.} On \(\ell^2(\mathbb N_0)\) take \(\Omega=e_0\),
+\(He_0=0\), \(He_j=e_j\) for \(1\le j\le k\), and
+\(He_{k+j}=j^{-1}e_{k+j}\) for \(j\ge1\). Every tested vector in the
+first \(k\) excited coordinates has rate 1, while other excited
+eigenvalues approach zero.
+
+\textbf{No common rate.} For \(He_n=n^{-1}e_n\) and \(n\ge1\), finitely
+supported centered vectors form a dense set. Each has an individual
+positive exponential rate; no common positive rate exists and there is
+no gap.
+
+\textbf{Finite observation window.} For any \(H\ge0\), \(\Delta>0\), and
+finite \(T\), contraction gives
+\(\langle\psi,e^{-tH}\psi\rangle\le e^{\Delta T}\|\psi\|^2e^{-\Delta t}\)
+on \(0\le t\le T\). A finite-time upper bound alone cannot establish the
+theorem.
+
+\section{Missing implication from boundary influence to
+clustering}\label{missing-implication-from-boundary-influence-to-clustering}
+
+The following elementary calculation exposes the needed interface. It is
+added explanatory material, not a proof that the Wilson model satisfies
+the interface.
+
+Let \(F\) be a bounded interior random variable, let \(G\) be bounded
+and measurable with respect to an exterior sigma algebra \(\mathcal E\),
+and put \(q_F=\mathbb E[F\mid\mathcal E]\). With covariance defined as
+\(\mathbb E[FG]-\mathbb E[F]\mathbb E[G]\),
+
+\[
+\operatorname{Cov}(F,G)
+=\mathbb E[(q_F-c)(G-\mathbb E G)]
+\]
+
+for any constant \(c\). If \(|q_F-c|\le\epsilon\) almost surely, then
+
+\[
+|\operatorname{Cov}(F,G)|\le2\epsilon\|G\|_\infty.
+\]
+
+If a conditional channel-law bound applies to all exterior
+configurations involved, its total variation controls differences of
+conditional expectations. For \(F=f(Y)\) with bounded \(f\), the UFBI
+convention gives
+\(|q_F(\tau)-q_F(\tau')|\le\|f\|_\infty KM e^{-\gamma D}\). A fixed
+reference collar supplies \(c\), provided the comparison covers the
+actual conditional law.
+
+If the bound holds only on a good event of probability at least \(1-p\)
+and \(|c|\le\|F\|_\infty\), the same argument gives
+
+\[
+|\operatorname{Cov}(F,G)|
+\le2\|G\|_\infty\bigl(\epsilon+2\|F\|_\infty p\bigr).
+\]
+
+The bad-collar contribution must therefore be controlled quantitatively.
+The Gaussian condition \(\|\tau/a\|_\infty\le M\) is deterministic; it
+is not established as a uniform typical-boundary statement for random
+collars. With unrestricted scalar amplitudes and a nonzero channel
+response, scaling a collar difference drives its Gaussian total
+variation arbitrarily close to 1. The amplitude restriction is
+substantive.
+
+\textbf{New audit observation for review.} Suppose the collar is sampled
+as unaveraged sites of a larger finite Gaussian box with this same
+precision convention. Its precision \(\widetilde A\) satisfies
+\(\widetilde A\preceq(16+(ma)^2)I\), so at each sampled site \(y\),
+
+\[
+\operatorname{Var}(\tau_y)=(\widetilde A^{-1})_{yy}
+\ge\frac1{16+(ma)^2}.
+\]
+
+Bounding the Gaussian density by its maximum gives, even with a nonzero
+mean,
+
+\[
+\Pr\{|\tau_y|\le aM\}
+\le\sqrt{2/\pi}\,aM\sqrt{16+(ma)^2}\longrightarrow0.
+\]
+
+For fixed \(m,M\) the event that every raw collar site obeys the cutoff
+is therefore atypical as \(a\to0\). A fixed-cutoff small-tail argument
+cannot justify the desired continuum clustering for that collar law.
+This deduction is added during the handoff audit, not claimed as an
+earlier result or a Lean proof. It does not apply automatically to
+averaged/coarse collars or compact Wilson links, and does not refute the
+deterministic Gaussian theorem. It motivates asking first about an
+averaged influence estimate, an appropriate boundary norm, or an
+explicitly coarse boundary construction.
+
+Before this template can supply (SG), the project must prove the
+relevant Gibbs/Markov conditioning identity; specify a gauge-compatible
+boundary class; control excluded collars or avoid excluding them; handle
+unbounded renormalized observables; identify the reflected/adjointed OS
+pairing; and relate collar separation to physical time with explicit
+constants. For example, \(D\ge ct-d_0\) produces rate \(c\gamma\), not
+automatically \(\gamma\).
+
+\section{Reconstruction and limit
+obligations}\label{reconstruction-and-limit-obligations}
+
+Reflection positivity is one input to reconstruction, not the full
+hypothesis set. A specific reconstruction theorem and its regularity,
+covariance, symmetry, positivity, and continuity assumptions must be
+identified. Osterwalder and Schrader's second paper explicitly extends
+and corrects the earlier paper; its complete hypotheses should be
+checked in the source rather than replaced with a shorthand slogan
+{[}4{]}. Luescher's regulated transfer-matrix construction provides
+relevant background, not the interacting continuum conclusion {[}5{]}.
+
+The Gaussian boundary theorem is uniform over its declared mesh and
+collar class. It does not prove convergence of the Gaussian channel
+distributions, much less a Yang-Mills continuum limit. A sufficient
+route for passing temporal bounds is convergence of matched, correctly
+normalized correlations with finite cutoff-independent prefactors for
+each fixed observable and a common physical rate. Other methods may
+organize prefactors differently, but the inference must survive the
+actual limits.
+
+The recovered upstream audit records an ordered fixed-volume continuum
+limit followed by a volume limit, and a distinction between unselected
+correlations and a selected phase. The displayed
+\texttt{WilsonRegularity.running} condition at the recorded commit
+requires positive logarithmic growth of the coupling parameter as the
+mesh shrinks {[}U{]}. Fixed strong-coupling lattice information alone is
+not a verification of that trajectory.
+
+If positive scalar spectral measures disintegrate as
+\(\nu=\int\nu_\chi\,d\eta(\chi)\), zero subgap mass of \(\nu\) implies
+zero subgap mass in almost every phase. To choose a common phase for all
+relevant vectors requires a countable determining/dense family and a
+proof that its phase representation is the intended one. An arbitrary
+estimate on a mixed signed correlator does not transfer pointwise to
+every selected phase.
+
+The common gap theorem concerns the reconstructed Hilbert space supplied
+to it, usually a vacuum sector. It does not automatically cover every
+representation or superselection sector.
+
+\section{Lean status and formalization
+handoff}\label{lean-status-and-formalization-handoff}
+
+The original \path{MassGap/ReflectionPositivity.lean} is preserved
+unchanged. Direct inspection confirms three \texttt{sorry} proof bodies.
+No Lean, Lake, or Elan build was run in this packaging task;
+\texttt{lean} and \texttt{lake} were unavailable on the executable path.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Obligation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Observed issue
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Required correction
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A1 Wilson reflection positivity & Arbitrary reflection/support arguments
+and \texttt{hGeometry\ :\ True} & Actual reflected link geometry,
+admissible positive-time algebra, measure invariance, integrability, and
+a Hermitian positive OS form \\
+A2 transfer operator & \texttt{hQIsOSQuotient\ :\ True}; conclusion
+permits the zero operator & Actual OS quotient/completion, descended
+translation, bounded extension, positivity, normalization and vacuum
+identities \\
+A3 spectral gap & Admitted lemma hides density, spectral pairing, phase
+and limit passage & Separate explicit hypotheses and proved adapters; do
+not substitute Gaussian control \\
+\end{longtable}
+
+The recovered \texttt{FOUNDATION\_STATUS.md} records prior source
+inspection of \path{yang-mills-group/OpenAI-YM-20261028} at commit
+
+\path{3456e5e75cf8d4cd558955a5c7638fba2d68f464}.
+
+It records \path{leanprover/lean4:v4.32.0} as the toolchain. This is a
+historical inspection record, not a fresh successful build. The main
+attachment points it identifies are \path{YM/OS/Flow.lean},
+\path{YM/OS/Dynamics.lean}, \path{YM/Heat/Lift.lean},
+\path{YM/Hilbert/Kolmogorov.lean}, \path{YM/Phase/Unique.lean}, and
+\texttt{PublicView.lean}. The heat-lift source explicitly develops
+nonnegative-energy spectral machinery without claiming a gap {[}U{]}.
+
+\textbf{Recommended implementation order.} First prove that exponential
+decay of a positive scalar Laplace transform eliminates low-energy
+measure. Then prove bounded-projection annihilation on a dense span and
+the vacuum projection identity. Adapt that result to the existing energy
+PVM and the actual Euclidean-time pairing. Identify an unbounded
+Hamiltonian and its spectrum only after the corresponding generator
+relationship is established.
+
+Acceptance requires a pinned build, exact statement review, no admitted
+proof in the new bridge, and an axiom/dependency report for the bridge
+and adapter. Explicit physical hypotheses may remain assumptions of a
+conditional theorem, but must be displayed as such. A clean build of an
+inadequate statement or a theorem depending on an assumed gap does not
+satisfy this criterion.
+
+\section{Review questions and next
+work}\label{review-questions-and-next-work}
+
+The best first reviewer is a researcher in constructive quantum field
+theory or rigorous lattice gauge theory, with renormalization and
+correlation-estimate experience. Functional analysis expertise is
+sufficient for the abstract spectral lemma. Lean expertise is useful
+after the mathematical interface is fixed.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Gaussian validity.} Are G1 to G8 correct under the exact
+  geometry, covariance, amplitude and smearing assumptions? Are any
+  stated uniformities too strong? Can the conservative bounds be
+  retained as a sound control without further optimization?
+\item
+  \textbf{Boundary applicability.} Which gauge-invariant collar
+  condition is both plausible for the Wilson measure and strong enough
+  for the intended conditioning argument? Does it require
+  exceptional-set estimates or a different metric?
+\item
+  \textbf{Temporal clustering.} What precise theorem turns that
+  condition into the positive autocorrelation bound (SG), and what rate
+  and prefactor losses occur?
+\item
+  \textbf{Density.} Which observable algebra gives a dense family of
+  centered reconstructed states? Can the estimate extend from chosen
+  channels to that algebra with a common rate?
+\item
+  \textbf{Limits and phases.} What is uniform along the actual
+  coupling/mesh/volume trajectory? What passes to a common selected
+  phase, and what establishes nontriviality?
+\item
+  \textbf{Formal fidelity.} Does the proposed PVM adapter state the
+  intended conditional theorem, with the correct zero-energy sector and
+  physical-time convention?
+\end{enumerate}
+
+Please return a short assessment classifying claims as correct, correct
+with added hypotheses, incorrect with a counterexample, or unresolved.
+For each repair, identify the precise statement or equation, the
+smallest change, and any new dependency. Recommend one next analytic
+lemma and one bounded formalization task, with observable completion
+criteria.
+
+\textbf{Recommended next milestone.} Complete the conditional
+scalar-measure/PVM theorem and its build/axiom report, while obtaining
+the Wilson-hypothesis review in parallel. Further broad Gaussian sweeps
+are lower priority unless a reviewer identifies a concrete missing
+check. Reconsider UFBI if the admissible collar restriction cannot
+control the relevant conditional measure, or if expanding the observable
+class removes the common positive rate. Direct temporal clustering can
+feed the same spectral theorem.
+
+\section{Reproducibility and fresh
+checks}\label{reproducibility-and-fresh-checks}
+
+The archive preserves the original 13 recovered files and records
+SHA-256 hashes in \path{provenance/original_sources.json}. Fresh results
+are separate from the originals. Source hashes embedded in the original
+numerical report agree with the recovered Python files and the rerun
+report.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Check performed for this handoff
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Observed result
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Supplied unit tests & 12 passed \\
+Analytic-bound sweep & 14 geometries, 56 collars, 168 channel
+measurements; zero recorded violations \\
+Rejected pilot replay & 108 measurements; 9 failures; strict command
+returned exit status 1 as expected \\
+Original implementation identity & Recorded source hashes match
+recovered and executed files \\
+Lean compilation and axiom audit & Not performed; compiler
+unavailable \\
+\end{longtable}
+
+The pilot failures are opposite constant collars at \(R=3\) for
+\(B=2,3,4\), in each of the mean, moments and full channels. Its
+\(K=4\), \(\gamma=1\) candidate remains rejected. The later sufficient
+constants do not retroactively validate it.
+
+The rerun environment was Python 3.12.14, NumPy 2.3.5, and SciPy 1.17.0.
+Floating-point consistency does not certify the universal analytic
+quantifiers or floating-point errors. The earliest exploratory
+outer-box-fixed sweep is retained but was not repeated; it is a
+historical result under a different normalization.
+
+From the extracted archive root, after installing the two packages
+listed in \texttt{requirements.txt}, run:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{OPENBLAS\_NUM\_THREADS}\OperatorTok{=}\NormalTok{1 }\ExtensionTok{python3} \AttributeTok{{-}m}\NormalTok{ unittest discover }\DataTypeTok{\textbackslash{}}
+  \AttributeTok{{-}s}\NormalTok{ MassGap/UFBI }\AttributeTok{{-}p} \StringTok{\textquotesingle{}test\_*.py\textquotesingle{}} \AttributeTok{{-}v}
+\VariableTok{OPENBLAS\_NUM\_THREADS}\OperatorTok{=}\NormalTok{1 }\ExtensionTok{python3}\NormalTok{ MassGap/UFBI/gaussian\_bounds.py }\DataTypeTok{\textbackslash{}}
+  \AttributeTok{{-}{-}out}\NormalTok{ validation/estimate\_checks\_local.json}
+\end{Highlighting}
+\end{Shaded}
+
+The README supplies the pilot replay command, its expected nonzero exit,
+the file map, and instructions for rebuilding this PDF. The longer
+spectral notes include additional exact counterexamples and a
+version-independent formalization contract. No repository push,
+publication, or message to a mathematician is part of this handoff.
+
+\section{References and original source
+map}\label{references-and-original-source-map}
+
+\textbf{{[}G{]} Original analytic derivation.}
+\path{MassGap/UFBI/GaussianBoundaryEstimate.md}, 20 November 2026.
+Complete G1 to G8 proofs, units, constants, trial-pairing calculation
+and numerical discussion. Original bytes preserved.
+
+\textbf{{[}S{]} Original specification.}
+\path{MassGap/UFBI/SPECIFICATION.md}, v0.1 with v0.2 analytic
+supplement, 20 November 2026. The rejected pilot and later supplement
+are both retained. Its early statement that scalar worst-case collars
+were not known is superseded for the block mean by the later
+positive-coefficient proof, as the supplement explains.
+
+\textbf{{[}F{]} Earlier status audit.}
+\path{original_notes/FOUNDATION_STATUS.md}, 20 November 2026. Records
+earlier source inspection and test results; fresh checks are identified
+separately above. \path{original_notes/README.md} documents the
+uncompiled scaffold.
+
+\textbf{{[}1{]} Arthur Jaffe and Edward Witten.} \emph{Quantum
+Yang-Mills Theory}, official Clay problem description, especially
+sections 4 and 5.
+\href{https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf}{Official
+PDF}. Used to define the final target, not to justify the proposed
+estimates.
+
+\textbf{{[}2{]} Wendelin Werner and Ellen Powell.} \emph{Lecture notes
+on the Gaussian Free Field}, arXiv:2004.04720v2 (2021).
+\href{https://arxiv.org/abs/2004.04720v2}{Paper}. Background on discrete
+and continuum Gaussian fields; its Laplacian conventions must be
+translated to the diagonal-8 convention here. The explicit constants in
+this packet are derived in {[}G{]}.
+
+\textbf{{[}3{]} Luc Devroye, Abbas Mehrabian and Tommy Reddad.}
+\emph{The total variation distance between high-dimensional Gaussians
+with the same mean}, arXiv:1810.08693v7 (2023), section 2.
+\href{https://arxiv.org/abs/1810.08693v7}{Paper}. Background for
+equal-covariance TV and Hellinger identities. The paper discloses a
+removed incorrect general upper bound in earlier versions; that bound is
+not used here.
+
+\textbf{{[}4{]} Konrad Osterwalder and Robert Schrader.} \emph{Axioms
+for Euclidean Green's functions II}, Communications in Mathematical
+Physics 42 (1975), 281-305.
+\href{https://doi.org/10.1007/BF01608978}{DOI}. Publisher abstract and
+bibliographic data checked; full archive retrieval was blocked during
+packaging. No claim is made to have audited the complete reconstruction
+hypotheses from that article in this task.
+
+\textbf{{[}5{]} Martin Luescher.} \emph{Construction of a selfadjoint,
+strictly positive transfer matrix for Euclidean lattice gauge theories},
+Communications in Mathematical Physics 54 (1977), 283-292.
+\href{https://doi.org/10.1007/BF01614090}{DOI};
+\href{https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf}{original
+DESY report}. Relevant regulated positivity and transfer-matrix
+construction; it is not a proof of the four-dimensional continuum mass
+gap.
+
+\textbf{{[}U{]} Upstream source references.}
+\href{https://github.com/yang-mills-group/OpenAI-YM-20261028/tree/3456e5e75cf8d4cd558955a5c7638fba2d68f464}{Repository
+at the recorded commit},
+\href{https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/ChallengeSpec.lean}{ChallengeSpec.lean},
+and
+\href{https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Heat/Lift.lean}{YM/Heat/Lift.lean}.
+The latter two source pages were checked during this handoff. The
+upstream dependency graph was not rebuilt or independently certified.
+The earlier audit contains the remaining pinned file links.
+
+The separate UOR/RG contract prototype is not relied on as mathematical
+evidence and is not included in this proof handoff. It would need an
+explicit integration and validation step before becoming part of the
+proof provenance.
+
+\end{document}

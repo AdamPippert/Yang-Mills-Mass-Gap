@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-20",
+  "unit_tests": {
+    "count": 12,
+    "passed": 12,
+    "exit_code": 0
+  },
+  "analytic_sweep": {
+    "geometries": 14,
+    "collar_cases": 56,
+    "channel_measurements": 168,
+    "failures": 0,
+    "max_mean_finite_ratio": 0.8651430833473271,
+    "max_mean_uniform_ratio": 0.2663874061666783,
+    "max_family_finite_ratio": 0.31271543455735806,
+    "max_family_uniform_ratio": 0.31271543455735806,
+    "max_moments_finite_ratio": 0.17793461048525927,
+    "max_moments_uniform_ratio": 0.17793461048525927,
+    "seconds": 2.963623182000447
+  },
+  "pilot_replay": {
+    "measurements": 108,
+    "failures": 9,
+    "exit_code": 1,
+    "expected_rejection": true
+  },
+  "lean": {
+    "run": false,
+    "reason": "lean and lake unavailable on PATH"
+  },
+  "original_sources_preserved": 13,
+  "human_review": false,
+  "note": "Numerical checks are floating-point consistency checks, not proof certificates."
+}

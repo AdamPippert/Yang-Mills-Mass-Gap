@@ -1,0 +1,8 @@
+date_utc: 2026-11-23T16:20:08Z
+machine: Darwin x86_64
+python 3.9.6
+numpy 2.0.2
+scipy 1.13.1
+script: sources/gemini/G1_gaussian_ufbi_check.py
+script_sha256: 305a8fe4ca75b8195bb0a0a26dca0533ab51411ec21cadb65926c1c80083d9fe
+command: OPENBLAS_NUM_THREADS=1 python run_ext.py   (B values 1,2,3,4,5,6,8,10 at R=3, m*ell = 6 and 12)
