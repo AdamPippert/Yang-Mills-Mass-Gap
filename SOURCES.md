@@ -104,6 +104,7 @@ Literature that C1 names "from memory" and no source here verifies: Osterwalderâ
 | Observed | `main` points to commit `3456e5e75cf8d4cd558955a5c7638fba2d68f464`, the commit that A1 and C1 pin. The commit message is "Import original October 28 OpenAI Yang-Mills submission". |
 | Observed | The README says the volume limit allows refinement and that "A positive mass gap ... are outside its scope." |
 | Not done | This repository did not clone or build the Lean sources. It did not check the repository's claims. |
+| Pinned files | [`sources/upstream/pinned-3456e5e/`](sources/upstream/pinned-3456e5e/README.md) holds verbatim copies of `ChallengeSpec.lean` and `YM/Phase/Mixture.lean`. Also touched, not stored: `PublicTheory.lean` and `Construction.lean` (searched for `Character`, no match); `PublicWilson.lean` (fetched only); `YM/Phase/Unique.lean`, `Picks.lean` and `Detect.lean` (opening lines only). |
 | Snapshot note | The snapshot [U1](sources/upstream/U1_OpenAI-YM-20261028_README.md) is an unmodified copy of the README. Its relative links point to files in the upstream repository and do not resolve in this repository. |
 
 ## Web reports on the upstream validation
